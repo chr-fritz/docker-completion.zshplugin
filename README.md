@@ -1,0 +1,37 @@
+# Docker Completion for macOS
+
+This is a ZSH plugin all [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)-compatible frameworks to easily load the completions for docker and docker-compose directly from the Docker for Mac app.
+
+## Installing
+
+### [Antibody](https://github.com/getantibody/antibody)
+
+Add `chr-fritz/docker-completion.zshplugin` to your `.zsh_plugins.txt` and execute `antibody update`.
+
+### [Antigen](https://github.com/zsh-users/antigen)
+
+Add `antigen bundle chr-fritz/docker-completion.zshplugin` to your `.zshrc`
+
+### [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
+
+1. cd to your `oh-my-zsh` plugins directory (~/.oh-my-zsh/custom/plugins)
+2. `git clone https://github.com/chr-fritz/docker-completion.zshplugin docker-completion`
+3. Add docker-completion to your plugins in your `.zshrc`
+```zsh
+...
+plugins=( ... docker-completion ...)
+...
+```
+
+### [Zgen](https://github.com/tarjoilija/zgen)
+
+Add `zgen load chr-fritz/docker-completion.zshplugin` to your `.zshrc` with your other load commands.
+
+### Without using any frameworks
+
+1. Clone this repository, then add its bin directory to your `$PATH`.
+2. Add `source /path/to/here/docker-completion.zshplugin` to your `.zshrc` file.
+
+## License
+
+Apache License 2.0 © 2020 Christian Fritz
