@@ -1,6 +1,6 @@
 # Docker Completion for macOS
 
-This is a ZSH plugin all [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)-compatible frameworks to easily load the completions for docker and docker-compose directly from the Docker for Mac app.
+This is a ZSH plugin for all [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)-compatible frameworks to easily load the completions for docker and docker-compose directly from the Docker for Mac app.
 
 ## Installing
 
