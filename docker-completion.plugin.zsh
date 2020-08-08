@@ -12,26 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-onMacOs() { [[ "$(uname -s)" = 'Darwin' ]]; }
-
-addToFpathIfExists() {
+__dockerCompletion_addToFpathIfExists() {
     local file=$1
     if [[ -f "${file}" ]]; then
         fpath+=$file
     fi
 }
 
-dockerBasePath() {
+__dockerCompletion_basePath() {
     dirname $(dirname $(realpath $(which docker)))
 }
 
-registerCompletion(){
-    basePath="$(dockerBasePath)"
-    addToFpathIfExists "${basePath}/etc/docker.zsh-completion"
-    addToFpathIfExists "${basePath}/etc/docker-machine.zsh-completion"
-    addToFpathIfExists "${basePath}/etc/docker-compose.zsh-completion"
+__dockerCompletion_registerCompletion(){
+    basePath="$(__dockerCompletion_basePath)"
+    __dockerCompletion_addToFpathIfExists "${basePath}/etc/docker.zsh-completion"
+    __dockerCompletion_addToFpathIfExists "${basePath}/etc/docker-machine.zsh-completion"
+    __dockerCompletion_addToFpathIfExists "${basePath}/etc/docker-compose.zsh-completion"
 }
 
-if onMacOs; then
-    registerCompletion
-fi
+__dockerCompletion_registerCompletion
+
