@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Adds the given file to the zsh variable fpath.
+# Before adding it, it checks if the file exists.
 __dockerCompletion_addToFpathIfExists() {
     local file=$1
     if [[ -f "${file}" ]]; then
@@ -19,10 +21,14 @@ __dockerCompletion_addToFpathIfExists() {
     fi
 }
 
+# Get the base path of the Docker for Mac installation.
+# It assumes that the completions are relative to the real path of the docker command.
+# This is the normal case for all Docker for Mac installations.
 __dockerCompletion_basePath() {
     dirname $(dirname $(realpath $(which docker)))
 }
 
+# Registers the docker completions from the Docker for Mac installation.
 __dockerCompletion_registerCompletion(){
     basePath="$(__dockerCompletion_basePath)"
     __dockerCompletion_addToFpathIfExists "${basePath}/etc/docker.zsh-completion"

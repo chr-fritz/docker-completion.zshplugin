@@ -2,6 +2,9 @@
 
 This is a ZSH plugin for all [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)-compatible frameworks to easily load the completions for docker and docker-compose directly from the Docker for Mac app.
 
+The Docker for Mac Application provides the tab completion for the `docker` and `docker-compose` commands directly under `/Applications/Docker.app/Contents/Resources/etc`.
+This plugin loads them directly from there without creating copies or symlinks. 
+
 ## Installing
 
 ### [Antibody](https://github.com/getantibody/antibody)
