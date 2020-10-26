@@ -14,10 +14,11 @@
 
 # Adds the given file to the zsh variable fpath.
 # Before adding it, it checks if the file exists.
-__dockerCompletion_addToFpathIfExists() {
+__dockerCompletion_linkIfNeeded() {
     local file=$1
-    if [[ -f "${file}" ]]; then
-        fpath+=$file
+    local target="/usr/local/share/zsh/site-functions/$2"
+    if [[ -f "${file}" && ! -e "${target}" ]]; then
+        ln -s "${file}" "${target}"
     fi
 }
 
@@ -31,9 +32,9 @@ __dockerCompletion_basePath() {
 # Registers the docker completions from the Docker for Mac installation.
 __dockerCompletion_registerCompletion(){
     basePath="$(__dockerCompletion_basePath)"
-    __dockerCompletion_addToFpathIfExists "${basePath}/etc/docker.zsh-completion"
-    __dockerCompletion_addToFpathIfExists "${basePath}/etc/docker-machine.zsh-completion"
-    __dockerCompletion_addToFpathIfExists "${basePath}/etc/docker-compose.zsh-completion"
+    __dockerCompletion_linkIfNeeded "${basePath}/etc/docker.zsh-completion" "_docker"
+    __dockerCompletion_linkIfNeeded "${basePath}/etc/docker-machine.zsh-completion" "_docker-machine"
+    __dockerCompletion_linkIfNeeded "${basePath}/etc/docker-compose.zsh-completion" "_docker-compose"
 }
 
 __dockerCompletion_registerCompletion
