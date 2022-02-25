@@ -26,7 +26,8 @@ __dockerCompletion_linkIfNeeded() {
 # It assumes that the completions are relative to the real path of the docker command.
 # This is the normal case for all Docker for Mac installations.
 __dockerCompletion_basePath() {
-    dirname $(dirname $(realpath $(which docker)))
+    docker_loc=$(which docker)
+    dirname $(dirname ${docker_loc:A})
 }
 
 # Registers the docker completions from the Docker for Mac installation.
@@ -38,4 +39,3 @@ __dockerCompletion_registerCompletion(){
 }
 
 __dockerCompletion_registerCompletion
-
