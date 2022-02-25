@@ -34,6 +34,17 @@ Add `zgen load chr-fritz/docker-completion.zshplugin` to your `.zshrc` with your
 1. Clone this repository, then add its bin directory to your `$PATH`.
 2. Add `source /path/to/here/docker-completion.zshplugin` to your `.zshrc` file.
 
+### Run once
+
+It's enough to run this plugin just once, assuming the plugin or Docker Desktop don't change the completion location.
+The site-functions directory might not be user-writable, so use elevated permissions.
+
+```shell
+git clone https://github.com/chr-fritz/docker-completion.zshplugin docker-completion
+cd docker-completion
+sudo zsh docker-completion.plugin.zsh
+```
+
 ## License
 
 Apache License 2.0 © 2020 Christian Fritz
