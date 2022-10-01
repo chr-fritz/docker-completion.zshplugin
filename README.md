@@ -25,9 +25,9 @@ plugins=( ... docker-completion ...)
 ...
 ```
 
-### [Zgen](https://github.com/tarjoilija/zgen)
+### [Zgenom](https://github.com/jandamm/zgenom)
 
-Add `zgen load chr-fritz/docker-completion.zshplugin` to your `.zshrc` with your other load commands.
+Add `zgenom load chr-fritz/docker-completion.zshplugin` to your `.zshrc` with your other load commands.
 
 ### Without using any frameworks
 
