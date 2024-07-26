@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This repository is no longer maintained. The Docker CLI now offers auto-completion itself. More information can be found in the [Docker documentation](https://docs.docker.com/config/completion/#zsh).
+
 # Docker Completion for macOS
 
 This is a ZSH plugin for all [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)-compatible frameworks to easily load the completions for docker and docker-compose directly from the Docker for Mac app.
